@@ -120,7 +120,7 @@ h1 {
 }
 .lead-sub {
   font-size: .98rem;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   margin-bottom: 40px;
 }
 
