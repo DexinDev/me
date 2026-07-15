@@ -86,8 +86,22 @@
 
   <footer class="foot">
     <span>&copy; <span id="year"></span> Danil Golovizin</span>
+    <button type="button" class="cookie-manage" id="cookie-manage">Cookies</button>
   </footer>
 
+  <div class="cookie-banner" id="cookie-banner" role="dialog"
+       aria-label="Cookie notice" aria-live="polite" hidden>
+    <p>
+      This site uses Google Analytics to see which pages get read. Nothing is
+      loaded and no cookies are set until you agree.
+    </p>
+    <div class="cookie-actions">
+      <button type="button" class="btn-ghost" data-consent="denied">Decline</button>
+      <button type="button" class="btn-solid" data-consent="granted">Accept</button>
+    </div>
+  </div>
+
   <script src="main.js"></script>
+  <script src="consent.js"></script>
 </body>
 </html>

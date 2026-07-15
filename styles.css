@@ -285,6 +285,70 @@ h1 {
   color: var(--ink-faint);
 }
 
+.cookie-manage {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: color .2s ease;
+}
+.cookie-manage:hover { color: var(--accent); }
+
+.cookie-banner {
+  position: fixed;
+  left: clamp(16px, 4vw, 32px);
+  bottom: clamp(16px, 4vw, 32px);
+  z-index: 20;
+  max-width: 380px;
+  padding: 20px;
+  background: rgba(20, 23, 28, .92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+  animation: cookie-in .3s ease;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner p {
+  margin: 0 0 16px;
+  font-size: .9rem;
+  color: var(--ink-dim);
+  line-height: 1.55;
+}
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.cookie-actions button {
+  font-family: var(--mono);
+  font-size: .82rem;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+.btn-ghost {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink-dim);
+}
+.btn-ghost:hover { border-color: var(--ink-faint); color: var(--ink); }
+.btn-solid {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #06201c;
+  font-weight: 700;
+}
+.btn-solid:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+@keyframes cookie-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
 @media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
@@ -297,4 +361,5 @@ h1 {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .cookie-banner { animation: none; }
 }
